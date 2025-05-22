@@ -8,76 +8,7 @@
   </head>
   <body>
     <div id="root"></div>
-    <div id="sphere-container"></div>
-
-  <script>
-    const tags = ["React", "Three.js", "Node.js", "WebGL", "MongoDB", "Vite", "AI", "Python", "Next.js", "Firebase"];
-
-    const container = document.getElementById("sphere-container");
-    const radius = 120;
-    const fov = 300;
-    const tagElements = [];
-
-    // Distribute tags evenly on sphere
-    tags.forEach((tag, i) => {
-      const span = document.createElement("span");
-      span.className = "tag";
-      span.innerText = tag;
-      container.appendChild(span);
-      tagElements.push({ el: span });
-    });
-
-    const total = tagElements.length;
-    const positions = [];
-    for (let i = 0; i < total; i++) {
-      const phi = Math.acos(-1 + (2 * i + 1) / total);
-      const theta = Math.sqrt(total * Math.PI) * phi;
-      positions.push({ phi, theta });
-    }
-
-    let mouseX = 0, mouseY = 0;
-    document.addEventListener('mousemove', e => {
-      const x = e.clientX / window.innerWidth - 0.5;
-      const y = e.clientY / window.innerHeight - 0.5;
-      mouseX = x * 2;
-      mouseY = y * 2;
-    });
-
-    function animate() {
-      const sinX = Math.sin(mouseX);
-      const cosX = Math.cos(mouseX);
-      const sinY = Math.sin(mouseY);
-      const cosY = Math.cos(mouseY);
-
-      tagElements.forEach((tag, i) => {
-        let x = radius * Math.cos(positions[i].theta) * Math.sin(positions[i].phi);
-        let y = radius * Math.sin(positions[i].theta) * Math.sin(positions[i].phi);
-        let z = radius * Math.cos(positions[i].phi);
-
-        // Rotate around X axis
-        let y1 = y * cosY - z * sinY;
-        let z1 = y * sinY + z * cosY;
-
-        // Rotate around Y axis
-        let x2 = x * cosX - z1 * sinX;
-        let z2 = x * sinX + z1 * cosX;
-
-        const scale = fov / (fov + z2);
-        const left = x2 * scale + container.offsetWidth / 2;
-        const top = y1 * scale + container.offsetHeight / 2;
-
-        tag.el.style.transform = `translate(-50%, -50%) scale(${scale})`;
-        tag.el.style.left = `${left}px`;
-        tag.el.style.top = `${top}px`;
-        tag.el.style.zIndex = Math.floor(z2);
-        tag.el.style.opacity = scale;
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-  </script>
+    
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

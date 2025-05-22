@@ -2,10 +2,10 @@
   position: relative;
   width: 400px;
   height: 400px;
-  margin: 0 auto;
-  perspective: 1000px;
-  overflow: visible;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
+
 
 .tag {
   position: absolute;

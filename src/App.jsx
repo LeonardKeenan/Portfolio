@@ -77,6 +77,7 @@ export default function App() {
         <TagSphereVanilla />
       </section>
 
+
       <section className="relative z-10 max-w-6xl mx-auto px-4 md:px-8 py-16">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 text-center">
           Projects
@@ -110,9 +111,8 @@ export default function App() {
       </section>
 
       <div
-        className={`fixed bottom-4 left-1/2 m-4 -translate-x-1/2 z-20 text-white transition-opacity duration-500 ${
-          atTop ? 'opacity-100' : 'opacity-0'
-        } animate-bounce`}
+        className={`fixed bottom-4 left-1/2 m-4 -translate-x-1/2 z-20 text-white transition-opacity duration-500 ${atTop ? 'opacity-100' : 'opacity-0'
+          } animate-bounce`}
       >
         <ArrowDown size={44} />
       </div>
