@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import './index.css';
 import Project from './components/project';
 import { ArrowDown } from 'phosphor-react';
+import TagSphereVanilla from './components/TagSphereVanilla';
 
 export default function App() {
   const bubbleRef = useRef(null);
@@ -29,7 +30,7 @@ export default function App() {
     };
 
     const handleScroll = () => {
-      setAtTop(window.scrollY <= 10); // anything above 10px hides the arrow
+      setAtTop(window.scrollY <= 10);
     };
 
     window.addEventListener('mousemove', onMouseMove);
@@ -41,7 +42,6 @@ export default function App() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
 
   return (
     <>
@@ -69,14 +69,14 @@ export default function App() {
           <div className="interactive" ref={bubbleRef}></div>
         </div>
       </div>
-      <section className="min-h-screen flex flex-col items-center justify-center text-center gap-4 z-10">
-        <h1 className="font-anton text-6xl md:text-8xl text-white">
-          heres my stuff
+
+      <section className="min-h-screen flex flex-col items-center justify-center text-center gap-4 z-10 relative">
+        <h1 className="font-anton text-6xl md:text-8xl text-white relative z-10">
+          Leonard Keenan
         </h1>
-        <h2 className="font-anton text-4xl md:text-6xl text-white">
-          (connor baltich)
-        </h2>
+        <TagSphereVanilla />
       </section>
+
       <section className="relative z-10 max-w-6xl mx-auto px-4 md:px-8 py-16">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 text-center">
           Projects
@@ -92,7 +92,7 @@ export default function App() {
             link='https://time-traveler.vercel.app/'
             image='/images/time-traveler.png'
             title='Time Traveler'
-            description='do you have the same song on reapeat... i do.'
+            description='do you have the same song on repeat... i do.'
           />
           <Project
             link='https://bindaddy-util.vercel.app/'
@@ -108,9 +108,11 @@ export default function App() {
           />
         </div>
       </section>
+
       <div
-        className={`fixed bottom-4 left-1/2 m-4 -translate-x-1/2 z-20 text-white transition-opacity duration-500 ${atTop ? 'opacity-100' : 'opacity-0'
-          } animate-bounce`}
+        className={`fixed bottom-4 left-1/2 m-4 -translate-x-1/2 z-20 text-white transition-opacity duration-500 ${
+          atTop ? 'opacity-100' : 'opacity-0'
+        } animate-bounce`}
       >
         <ArrowDown size={44} />
       </div>

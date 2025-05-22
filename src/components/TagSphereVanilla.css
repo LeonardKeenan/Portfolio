@@ -1,0 +1,19 @@
+.sphere-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  perspective: 1000px;
+  overflow: visible;
+}
+
+.tag {
+  position: absolute;
+  white-space: nowrap;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: white;
+  text-shadow: 0 0 2px black;
+  will-change: transform;
+  transition: transform 0.1s linear, opacity 0.1s linear;
+}
