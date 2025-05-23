@@ -6,9 +6,13 @@ import Div3D from '../engine/Div3D.js';
 import SphereEngine from '../engine/SphereEngine.js';
 
 const TAGS = [
-  "React", "Three.js", "Node.js", "WebGL",
-  "MongoDB", "Vite", "AI", "Python",
-  "Next.js", "Firebase"
+  "Python", "JavaScript", "Java", "SQL", "C++", "Tailwind", "React",
+  "Node.js", "MySQL", "PostgreSQL", "Tableau", "Docker", "Kubernetes", "AWS",
+  "Salesforce", "AI", "LangChain", "GitHub", "Bash", "NIST CSF", "ISO 27001", "PCI DSS", "Risk Assessment", "Compliance", "Access Control",
+  "Incident Response", "SOPs", "Cyber Strategy", "System Design", "Project Planning",
+  "Technical Writing", "Data Analytics", "Visualizations", "Stored Procedures", "Cloud Deployment",
+  "API Integration", "Full-Stack Dev", "Automation", "Agile",
+  "BPMN", "SDLC"
 ];
 
 export default function TagSphereVanilla() {
