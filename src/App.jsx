@@ -3,6 +3,15 @@ import './index.css';
 import Project from './components/project';
 import { ArrowDown } from 'phosphor-react';
 import TagSphereVanilla from './components/TagSphereVanilla';
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+import SkillsOrb from './components/SkillsOrb'; // Make sure this path matches
+import { OrbitControls } from '@react-three/drei';
+import TagSphere3D from './components/TagSphere';
+import MergedOrbAndTags from './components/MergedOrbAndTags'; // Make sure this path matches
+
+
+
 
 export default function App() {
   const bubbleRef = useRef(null);
@@ -70,12 +79,38 @@ export default function App() {
         </div>
       </div>
 
-      <section className="min-h-screen flex flex-col items-center justify-center text-center gap-4 z-10 relative">
-        <h1 className="font-anton text-6xl md:text-8xl text-white relative z-10">
-          Leonard Keenan
-        </h1>
-        <TagSphereVanilla />
-      </section>
+      <section className="min-h-screen flex flex-row items-center justify-center text-white z-10 relative">
+  {/* Left side: Name */}
+  <div className="w-full md:w-1/2 flex justify-center md:justify-start px-4 md:px-12 z-10">
+  <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 md:p-12 max-w-lg shadow-xl text-white/90">
+    <h1 className="font-anton text-5xl md:text-7xl mb-2 text-white">Leonard Keenan</h1>
+    <h2 className="text-xl md:text-2xl text-purple-300 font-semibold mb-4">System Professional</h2>
+    <p className="text-base md:text-lg leading-relaxed text-white/80">
+      Building secure systems, smart tools, and clean interfaces.
+      <br className="hidden sm:inline" />
+      Always learning, always improving.
+    </p>
+  </div>
+</div>
+
+
+
+  {/* Right side: Skills Sphere */}
+  <div className="w-1/2 h-[900px] flex items-center justify-center">
+  <Canvas camera={{ position: [0, 0, 900], fov: 45, near: 0.1, far: 5000 }}>
+    <ambientLight />
+    <Suspense fallback={null}>
+      <MergedOrbAndTags />
+    </Suspense>
+    <OrbitControls enablePan={false} enableZoom={false} />
+  </Canvas>
+</div>
+
+
+
+
+</section>
+
 
 
       <section className="relative z-10 max-w-6xl mx-auto px-4 md:px-8 py-16">

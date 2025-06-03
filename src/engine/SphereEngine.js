@@ -25,9 +25,14 @@ export default class SphereEngine {
     }
 
     onMouseMove(e) {
-        this.mouseX = (e.clientX - this.windowHalfX) * 0.1;
-        this.mouseY = (e.clientY - this.windowHalfY) * 0.1;
-    }
+        const bounds = this.container.getBoundingClientRect();
+        const centerX = bounds.left + bounds.width / 2;
+        const centerY = bounds.top + bounds.height / 2;
+      
+        this.mouseX = (e.clientX - centerX) * 0.08;
+        this.mouseY = (e.clientY - centerY) * 0.08;
+      }
+      
 
     onResize() {
         this.windowHalfX = window.innerWidth >> 1;
