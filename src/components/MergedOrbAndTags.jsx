@@ -189,7 +189,7 @@ export default function MergedOrbAndTags({ radius = 265 }) {
             {/* Particle Orb */}
             <points geometry={particleGeometry}>
                 <pointsMaterial
-                    color={'hotpink'}
+                    color={'#2684FF'}
                     size={8}
                     transparent
                     blending={THREE.AdditiveBlending}

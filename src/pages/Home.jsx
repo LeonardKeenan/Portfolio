@@ -80,7 +80,7 @@ export default function Home() {
         <div className="w-full md:w-1/2 flex justify-center md:justify-start px-4 md:px-12 z-10">
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 md:p-12 max-w-3xl shadow-xl text-white/90">
             <h1 className="font-anton text-5xl md:text-7xl mb-2 text-white">Leonard Keenan</h1>
-            <h2 className="text-xl md:text-2xl text-purple-300 font-semibold mb-4">System Professional</h2>
+            <h2 className="text-xl md:text-2xl text-blue-300 font-semibold mb-4">System Professional</h2>
             <p className="text-base md:text-lg leading-relaxed text-white/80">
               Building secure systems, smart tools, and clean interfaces.
               <br className="hidden sm:inline" />
@@ -114,9 +114,8 @@ export default function Home() {
 
       {/* Down Arrow */}
       <div
-        className={`fixed bottom-4 left-1/2 m-4 -translate-x-1/2 z-20 text-white transition-opacity duration-500 ${
-          atTop ? 'opacity-100' : 'opacity-0'
-        } animate-bounce`}
+        className={`fixed bottom-4 left-1/2 m-4 -translate-x-1/2 z-20 text-white transition-opacity duration-500 ${atTop ? 'opacity-100' : 'opacity-0'
+          } animate-bounce`}
       >
         <ArrowDown size={44} />
       </div>

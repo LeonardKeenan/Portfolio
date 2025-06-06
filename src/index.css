@@ -25,17 +25,18 @@ body {
 }
 
 :root {
-  --color-bg1: rgb(108, 0, 162);
-  --color-bg2: rgb(0, 17, 82);
-  --color1: 18, 113, 255;
-  --color2: 221, 74, 255;
-  --color3: 100, 220, 255;
-  --color4: 200, 50, 50;
-  --color5: 180, 180, 50;
-  --color-interactive: 140, 100, 255;
+  --color-bg1: #0d0d0d;         /* Very dark gray background */
+  --color-bg2: #1a1a1a;         /* Slightly lighter dark gray for variation */
+  --color1: 38, 132, 255;       /* Primary accent blue (clean and vivid) */
+  --color2: 80, 80, 80;         /* Mid gray (can be used for neutral accents) */
+  --color3: 120, 120, 120;      /* Light gray (for highlights/text) */
+  --color4: 30, 30, 30;         /* Deep gray, almost black */
+  --color5: 60, 60, 60;         /* Soft gray for subtle differences */
+  --color-interactive: 38, 132, 255; /* Use the same blue as --color1 for consistent interaction */
   --circle-size: 80%;
   --blending: hard-light;
 }
+
 
 @keyframes moveInCircle {
   0% {
